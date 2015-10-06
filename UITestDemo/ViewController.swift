@@ -21,5 +21,18 @@ class ViewController: UIViewController {
     }
 
 
+    @IBOutlet  weak var outputText: UILabel!
+    @IBOutlet weak var inputText: UITextField!
+
+    @IBAction func postStatus(sender: AnyObject) {
+
+        outputText.text = inputText.text
+    }
+
+
+
+
+
+
 }
 

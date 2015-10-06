@@ -29,8 +29,16 @@ class UITestDemoUITests: XCTestCase {
     }
     
     func testExample() {
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+
+        
+        let app = XCUIApplication()
+        let textField = app.otherElements.containingType(.Button, identifier:"Post Status").childrenMatchingType(.TextField).element
+        textField.tap()
+        textField.typeText("feeling awesome")
+        app.buttons["Post Status"].tap()
+        XCTAssert(app.staticTexts["feeling awesome"].exists)
+
+
     }
     
 }
